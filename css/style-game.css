@@ -1,0 +1,162 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Gradiente roxo e rosa para o fundo */
+    background: linear-gradient(135deg, #8a2be2 0%, #fd79a8 100%);
+    /* Roxo médio para Rosa médio */
+    color: #333333;
+    /* Cor de texto padrão */
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden; /* remove o scroll vertical e horizontal */
+}
+
+/* ==== NAVBAR ==== */
+
+.navbar {
+    background: #f3ecec;
+    display: flex;
+    justify-content: space-between;
+    opacity: 90%;
+    padding: 15px 30px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #555;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    color: #a020f0;
+}
+
+/* === CONTAINER DEL JUEGO ===*/
+.game-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column; /* <<< muda o eixo para vertical */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 75vh;
+    max-width: 550px;
+    background-color: #f3f1f1;
+    /* Fundo branco para o container principal */
+    border-radius: 15px;
+    /* Bordas mais arredondadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra mais pronunciada */
+    padding: 35px;
+    box-sizing: border-box; /* <<< melhor que content-box nesse caso */
+    text-align: center; /* centraliza textos internos */
+}
+
+h1 {
+    text-align: center;
+    align-items: flex-start;
+    color: #6a0572;
+    /* Roxo escuro para o título */
+    font-size: 2.2rem;
+    /* Título um pouco maior */
+    letter-spacing: 1px;
+}
+
+#question {
+    font-size: 1.35rem;
+    /* Pergunta um pouco maior */
+    margin-bottom: 25px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Espaço maior entre os botões */
+    margin-bottom: 25px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    /* Padding maior para botões */
+    font-size: 1.1rem;
+    /* Texto do botão um pouco maior */
+    text-align: left;
+    background-color: #f5f5f5;
+    /* Cinza claro para botões normais */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    /* Bordas arredondadas para botões */
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    /* Transição mais suave */
+    color: #333333;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #ffaddb;
+    /* Rosa claro no hover */
+    border-color: #fd79a8;
+    /* Rosa médio na borda do hover */
+    transform: translateY(-2px);
+    /* Efeito de "levantar" */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Classes para feedback visual */
+.btn.correct {
+    background-color: #d4edda;
+    /* Verde padrão, mantido para indicar correto */
+    border-color: #28a745;
+    color: #155724;
+    font-weight: bold;
+}
+
+.btn.incorrect {
+    background-color: #f8d7da;
+    /* Vermelho padrão, mantido para indicar incorreto */
+    border-color: #dc3545;
+    color: #721c24;
+    font-weight: bold;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    /* Levemente mais opaco */
+}
+
+#next-btn {
+    display: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #8a2be2;
+    /* Roxo médio para o botão Próximo */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+}
+
+#next-btn:hover {
+    background-color: #6a0572;
+    /* Roxo escuro no hover do botão Próximo */
+    transform: translateY(-1px);
+}
