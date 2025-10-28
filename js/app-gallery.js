@@ -27,15 +27,15 @@ likeButtons.forEach((button, index) => {
     const liked = button.classList.toggle("liked");
 
     if (liked) {
-      // Incrementa no Firebase
-      likeRef.transaction((likes) => (likes || 0) + 1);
-      localStorage.setItem(userLikedKey, "true");
-      button.innerHTML = `❤️ Me gusta <span class="like-count">${parseInt(countSpan.textContent) + 1}</span>`;
-    } else {
-      // Decrementa no Firebase
-      likeRef.transaction((likes) => Math.max((likes || 0) - 1, 0));
-      localStorage.removeItem(userLikedKey);
-      button.innerHTML = `♡ Me gusta <span class="like-count">${parseInt(countSpan.textContent) - 1}</span>`;
-    }
-  });
+  // Incrementa no Firebase
+  likeRef.transaction((likes) => (likes || 0) + 1);
+  localStorage.setItem(userLikedKey, "true");
+  button.innerHTML = `❤️ Me gusta <span class="like-count">${countSpan.textContent}</span>`;
+} else {
+  // Decrementa no Firebase
+  likeRef.transaction((likes) => Math.max((likes || 0) - 1, 0));
+  localStorage.removeItem(userLikedKey);
+  button.innerHTML = `♡ Me gusta <span class="like-count">${countSpan.textContent}</span>`;
+}
+});
 });
