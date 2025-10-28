@@ -17,6 +17,18 @@ likeButtons.forEach(button => {
   });
 });*/
 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Testando conexão com Firebase...");
+
+  const testRef = database.ref("test/connection");
+  testRef.set("🔥 Conectado com sucesso!").then(() => {
+    console.log("✅ Firebase está funcionando!");
+  }).catch((error) => {
+    console.error("❌ Erro ao conectar com Firebase:", error);
+  });
+});
+
+
 
 // Logica boton like
 
